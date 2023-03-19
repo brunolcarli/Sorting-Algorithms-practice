@@ -17,13 +17,13 @@ def get_random_array(n):
 
 
 ```python
-def get_proc_time(algorithm, array, repeat=3):
+def get_proc_time(algorithm, array, count=3):
     setup_code = f"from __main__ import {algorithm}" \
         if algorithm != "sorted" else ""
 
     stmt = f"{algorithm}({array})"
 
-    times = repeat(setup=setup_code, stmt=stmt, repeat=repeat, number=10)
+    times = repeat(setup=setup_code, stmt=stmt, repeat=count, number=10)
     return min(times), max(times)
 ```
 
